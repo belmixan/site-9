@@ -1,0 +1,111 @@
+body {
+    background: black;
+}
+
+.star {
+    background: linear-gradient(90deg, rgba(0, 0, 255, 0), #769ee4);
+    width: 10px;
+    height: 2px;
+    position: absolute;
+    animation: tail 3s ease-in-out infinite, shooting 3s ease-in-out infinite;
+}
+
+@keyframes tail {
+    0% {
+        width: 0%;
+    }
+    30% {
+        width: 150px;
+    }
+    100% {
+        width: 0px;
+    }
+}
+
+.star::after, .star::before {
+    content: " ";
+    width: 10px;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(0, 0, 255, 0), #769ee4, rgba(0, 0, 255, 0));
+    right: 0;
+    position: absolute;
+    animation: shining 3s ease-in-out infinite;
+    transform: rotate(45deg);
+}
+
+.star::after {
+    transform: rotate(135deg);
+}
+
+@keyframes shooting {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(320px);
+    }
+}
+
+.sky-container {
+    transform: rotate(45deg);
+    position: absolute;
+    margin: 250px 0 0 500px;
+}
+
+@keyframes shining {
+    0% {
+        width: 0;
+    }
+    60% {
+        width: 40px;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+.star:nth-child(5) {
+    top: 100px;
+    right: 20px;
+    animation-delay: 0.35s;
+}
+
+.star:nth-child(4) {
+    top: 200px;
+    right: 700px;
+    animation-delay: 0.25s;
+}
+
+.star:nth-child(3) {
+    top: 159px;
+    right: 300px;
+    animation-delay: 0.45s;
+}
+
+.star:nth-child(2) {
+    top: 71px;
+    right: 519px;
+    animation-delay: 0.15s;
+}
+
+.star:nth-child(1) {
+    top: 120px;
+    right: 211px;
+    animation-delay: 0.65s;
+}
+
+.images img {
+    position: absolute;
+}
+
+.images img:nth-child(1){
+    width: 20%;
+    bottom: 0;
+    left: 0;
+}
+
+.images img:nth-child(2){
+    width: 25%;
+    top: 0;
+    right: 0;
+}
